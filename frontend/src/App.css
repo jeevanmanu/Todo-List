@@ -1,0 +1,263 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b0d14;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background:
+    radial-gradient(circle at 15% 10%, #39216a40, transparent 35%),
+    radial-gradient(circle at 90% 80%, #283e7640, transparent 35%),
+    #0b0d14;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 35px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  font-size: 22px;
+}
+
+.header h1 {
+  font-size: clamp(34px, 6vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.header h1 span {
+  color: #a78bfa;
+}
+
+.subtitle {
+  color: #9297a8;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: #171b29;
+  border: 1px solid #292d3e;
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #8b5cf6;
+}
+
+.stat-card p {
+  font-size: 12px;
+  color: #9297a8;
+  margin-bottom: 10px;
+}
+
+.stat-card h2 {
+  font-size: 30px;
+}
+
+.stat-card:nth-child(2) h2 {
+  color: #a78bfa;
+}
+
+.todo-card {
+  background: #171b29;
+  border: 1px solid #292d3e;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 60px #00000030;
+}
+
+.todo-card h2 {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  background: #0e111b;
+  border: 1px solid #303449;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px #8b5cf620;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+.add-btn {
+  padding: 0 20px;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px #8b5cf650;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #202536;
+  border: 1px solid #303449;
+  padding: 16px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.todo-item:hover {
+  border-color: #8b5cf6;
+  transform: translateX(3px);
+}
+
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #8b5cf6;
+  cursor: pointer;
+}
+
+.todo-title {
+  flex: 1;
+  font-size: 14px;
+  color: #f1f1f5;
+  overflow-wrap: anywhere;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: #777d90;
+}
+
+.delete-btn {
+  background: #ef444415;
+  color: #fb7185;
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+.delete-btn:hover {
+  background: #ef444430;
+  transform: scale(1.05);
+}
+
+.empty {
+  color: #777d90;
+  text-align: center;
+  padding: 30px 10px;
+  font-size: 14px;
+}
+
+.footer {
+  color: #777d90;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 30px 15px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 14px 10px;
+  }
+
+  .stat-card h2 {
+    font-size: 24px;
+  }
+
+  .todo-card {
+    padding: 17px;
+  }
+
+  .input-group {
+    flex-wrap: wrap;
+  }
+
+  .input-group input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .add-btn {
+    padding: 13px 20px;
+  }
+}
